@@ -27,7 +27,6 @@ const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   // Game rules
-
   const openGameRules = () => {
     dispatch({ type: "DISPLAY_GAME_RULES" });
   };
@@ -35,7 +34,6 @@ const AppProvider = ({ children }) => {
   const closeGameRules = () => {
     dispatch({ type: "CLOSE_GAME_RULES" });
   };
-
   ///////////////
 
   // Pause menu
@@ -46,7 +44,6 @@ const AppProvider = ({ children }) => {
   const closePauseMenu = () => {
     dispatch({ type: "CLOSE_PAUSE_MENU" });
   };
-
   ////////////////
 
   const switchWhoseTurnItIs = () => {
@@ -65,8 +62,7 @@ const AppProvider = ({ children }) => {
   };
 
   const updatePieces = (indexToUpdate, player) => {
-    // Updates the pieces state value
-
+    // Updates the pieces state variable
     dispatch({
       type: "UPDATE_PIECES_STATE",
       payload: { indexToUpdate, player },
@@ -74,19 +70,16 @@ const AppProvider = ({ children }) => {
   };
 
   const turnAnimationOff = () => {
-    // sets the isAnimationProgress state value to false
-
+    // sets the isAnimationProgress state variable to false
     dispatch({ type: "TURN_OFF_ANIMATION" });
   };
   const turnAnimationOn = () => {
-    // sets the isAnimationProgress state value to true
-
+    // sets the isAnimationProgress state variable to true
     dispatch({ type: "TURN_ON_ANIMATION" });
   };
 
   const gamePieceDropAnimation = (gamePiece, pieceDropHeight) => {
     // sets the game piece drop animation
-
     gamePiece.animate(
       [
         { transform: `translateY(${pieceDropHeight}px)`, offset: 0 },
@@ -104,7 +97,6 @@ const AppProvider = ({ children }) => {
 
   const displayWinnerName = () => {
     // returns the appropriate player name in the winner display card
-
     let name;
     if (state.isRedTurn && state.isComputerPlaying && !state.isDraw) {
       name = "you";
@@ -122,7 +114,6 @@ const AppProvider = ({ children }) => {
 
   const displayWinnerBgColor = () => {
     // returns the appropriate class name needed to display the correct background color for the winner
-
     let bgColor = "";
     let name = displayWinnerName();
 
@@ -136,7 +127,6 @@ const AppProvider = ({ children }) => {
 
   const addWinMarker = (boardCell) => {
     // adds circle indicators on the winning game pieces
-
     let gameboard = document.querySelector(".gameboard");
 
     let winMarker = document.createElement("div");
@@ -147,8 +137,7 @@ const AppProvider = ({ children }) => {
   };
 
   const didPlayerWin = (player, pieces) => {
-    // returns true if there is a winning set of 4 game pieces
-
+    // returns true if there is a winning row of 4 game pieces
     for (let index = 0; index < 42; index++) {
       // check horizontal win starting at index
       if (
@@ -255,7 +244,7 @@ const AppProvider = ({ children }) => {
   };
 
   const startNewGame = () => {
-    // This function is for when players want to "play again" after a game has concluded
+    // This is for when players want to "play again" after a game has concluded
     clearBoardDOM();
     dispatch({
       type: "START_NEW_GAME",
@@ -272,8 +261,7 @@ const AppProvider = ({ children }) => {
   };
 
   const restartGame = () => {
-    // This function is for when players restart a game
-
+    // This is for when players restart a game
     clearBoardDOM();
     dispatch({
       type: "RESTART_GAME",
@@ -283,7 +271,6 @@ const AppProvider = ({ children }) => {
 
   const removeUnplacedPiece = () => {
     // Removes unplaced player indicators and game pieces at the top of a column
-
     let previousIndicator = document.querySelector("[data-placed='false']");
 
     if (previousIndicator) {
@@ -292,14 +279,12 @@ const AppProvider = ({ children }) => {
   };
 
   const computerOpponent = () => {
-    // This sets the "isComputerPlaying" state value to true. Necessary for player vs cpu games
-
+    // This sets the "isComputerPlaying" state variable to true. Necessary for player vs cpu games
     dispatch({ type: "COMPUTER_IS_PLAYING" });
   };
 
   const humanOpponent = () => {
-    // This sets the "isComputerPlaying" state value to false. Necessary for player vs player games
-
+    // This sets the "isComputerPlaying" state variable to false. Necessary for player vs player games
     dispatch({ type: "HUMAN_IS_PLAYING" });
   };
 
@@ -314,7 +299,6 @@ const AppProvider = ({ children }) => {
 
   const getFirstAvailableRow = (pieces, column) => {
     // returns the first available row in a column
-
     return pieces.filter((_, index) => index % 7 === column).lastIndexOf(0);
   };
 
@@ -345,8 +329,7 @@ const AppProvider = ({ children }) => {
   };
 
   const handlePlayerMove = (e, column) => {
-    // handles placing a piece on the board after a player clicks a column with available slots
-
+    // handles placing a piece on the board after a player clicks a column with available slots in it
     if (state.isWinnerDeclared) {
       e.preventDefault();
       return;

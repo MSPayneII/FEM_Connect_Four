@@ -12,18 +12,20 @@ const RedTimer = () => {
   } = useGlobalContext();
 
   useEffect(() => {
-    // let interval = setInterval(() => {
-    //   if (!isPauseMenuOpen) {
-    //     CounterMinusOneSec();
-    //     if (timePerMove === 0) {
-    //       // 1 = red player
-    //       otherPlayerIsWinner(1);
-    //     }
-    //   }
-    // }, 1000);
-    // return () => {
-    //   clearInterval(interval);
-    // };
+    let interval = setInterval(() => {
+      if (!isPauseMenuOpen) {
+        CounterMinusOneSec();
+
+        if (timePerMove === 0) {
+          // 1 = red player
+          otherPlayerIsWinner(1);
+        }
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, [isPauseMenuOpen, timePerMove]);
 
   return (

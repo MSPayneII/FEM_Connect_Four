@@ -25,8 +25,7 @@ const Game = () => {
           <YellowScoreCard />
         </div>
         <GameBoard />
-        {/* {isRedTurn ? <RedTimer /> : <YellowTimer />} */}
-        <RedTimer />
+        {isRedTurn ? <RedTimer /> : <YellowTimer />}
         {isWinnerDeclared && <WinnerCard />}
         <PauseMenuModal />
       </div>
