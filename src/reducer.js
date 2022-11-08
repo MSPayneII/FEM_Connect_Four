@@ -81,7 +81,7 @@ const reducer = (state, action) => {
   if (action.type === "RESET_COUNTDOWN") {
     return {
       ...state,
-      timePerMove: 3,
+      timePerMove: 30,
     };
   }
 
@@ -106,8 +106,8 @@ const reducer = (state, action) => {
       isPauseMenuOpen: false,
       // isComputerPlaying: state.isComputerPlaying ? true : false,
       isRedTurn: state.isRedTurn ? true : false,
-      redScore: 12,
-      yellowScore: 23,
+      redScore: 0,
+      yellowScore: 0,
       firstTurnRed: state.isRedTurn ? false : true,
       isAnimationInProgress: false,
       isWinnerDeclared: false,
