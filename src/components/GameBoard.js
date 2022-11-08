@@ -22,7 +22,7 @@ const GameBoard = () => {
 
   return (
     <div className="gameboard">
-      {createBoardCells().map((_, index) => {
+      {/* {createBoardCells().map((_, index) => {
         return (
           <div
             key={index}
@@ -31,7 +31,70 @@ const GameBoard = () => {
             onClick={(e) => handlePlayerMove(e, index % 7)}
           ></div>
         );
-      })}
+      })} */}
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div
+        className="cell"
+        onMouseOver={() => mouseOverColumnIndicator(5)}
+      ></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell">
+        <div className="game-piece" data-player="2"></div>
+      </div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell">
+        <div className="game-piece" data-player="2"></div>
+      </div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell">
+        <div className="game-piece" data-player="1"></div>
+      </div>
+      <div className="cell">
+        <div className="game-piece" data-player="1"></div>
+      </div>
+      <div className="cell">
+        <div className="game-piece" data-player="2"></div>
+      </div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell"></div>
+      <div className="cell">
+        <div className="game-piece" data-player="1"></div>
+      </div>
+      <div className="cell">
+        <div className="game-piece" data-player="2"></div>
+      </div>
+      <div className="cell">
+        <div className="game-piece" data-player="2"></div>
+      </div>
+      <div className="cell">
+        <div className="game-piece" data-player="1"></div>
+      </div>
+      <div className="cell"></div>
     </div>
   );
 };

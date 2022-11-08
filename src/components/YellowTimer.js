@@ -12,20 +12,18 @@ const YellowTimer = () => {
   } = useGlobalContext();
 
   useEffect(() => {
-    let interval = setInterval(() => {
-      if (!isPauseMenuOpen) {
-        CounterMinusOneSec();
-
-        if (timePerMove === 0) {
-          // 2 = yellow
-          otherPlayerIsWinner(2);
-        }
-      }
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
+    // let interval = setInterval(() => {
+    //   if (!isPauseMenuOpen) {
+    //     CounterMinusOneSec();
+    //     if (timePerMove === 0) {
+    //       // 2 = yellow
+    //       otherPlayerIsWinner(2);
+    //     }
+    //   }
+    // }, 1000);
+    // return () => {
+    //   clearInterval(interval);
+    // };
   }, [isPauseMenuOpen, timePerMove]);
 
   return (

@@ -577,6 +577,15 @@ Score Cards
   }
 }
 
+@media screen and (min-width: 1750px) {
+  .red-card {
+    left: 23%;
+  }
+  .yellow-card {
+    right: 23%;
+  }
+}
+
 /*
 =============== 
 GameBoard
